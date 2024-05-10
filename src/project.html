@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amount Calculator</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: sans-serif;
+    }
+    img {
+      object-fit: cover;
+      /* border: 1px solid red; */
+      width: 200px;
+      height: 200px;
+    }
+    #imageWrapper {
+      display: inline-block;
+      overflow: hidden;
+    }
+    img {
+      transform: scale(2);
+    }
+  </style>
+</head>
+<body>
+  <div id="firstScreen">
+    <h2>Amount Calculator</h2>
+    First Number: <input type="number">
+    <br><br>
+    Second Number: <input type="number">
+    <br><br>
+    <button>Calculate</button>
+    <br>
+    <div id="imageWrapper" style="visibility: hidden">
+      <img src="https://static.wixstatic.com/media/f244d7_98c8fcdb45ea489999e790176f813eef~mv2.gif"/>
+    </div>
+  </div>
+  <div id="secondScreen" style="display: none">
+    <h2 style="color: white">Internal Server Error</h2>
+  </div>
+</body>
+<script>
+  document.querySelector('button').onclick = () => {
+    document.querySelector('#imageWrapper').style.visibility = 'visible';
+    
+    setTimeout(() => {
+      document.querySelector('#firstScreen').style.display = 'none';
+      document.body.style.background = 'black';
+      document.querySelector('#secondScreen').style.display = 'block';
+    }, 5000);
+  }
+</script>
+</html>
